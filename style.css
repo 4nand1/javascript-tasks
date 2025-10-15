@@ -1,0 +1,21 @@
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  display: flex;
+}
+.box {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+}

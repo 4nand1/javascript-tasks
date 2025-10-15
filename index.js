@@ -257,3 +257,112 @@
 // }
 // const missingNumber = totalSum - actualSum;
 // console.log(missingNumber);
+
+
+
+
+// Object
+
+// const product = {
+//     name: "Macbook",
+//     price: 1899,
+//     description: "new chip",
+//     origin: {
+//         country: "USA,California",
+//     }
+// }
+// console.log(product)
+
+
+// function a(num) {
+//     return num + 1
+// }
+
+// function fun(get) {
+//     return get(5);
+// }
+
+
+
+
+
+
+// const arr = [1, 3, 4, 6];
+// const result = arr.map((item) => {
+//     return item * item;
+// });
+// console.log(result);
+
+
+// function isBigEnough(value) {
+//   return value >= 10;
+// }
+
+// const filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+// console.log(isBigEnough(value))
+
+
+// 1. Reverse a string
+// Input: “hello”
+// Output: “"olleh"
+
+// const str = "hello";
+
+// const reverseString = (str) => {
+//     return str.split("").reverse().join("");
+// };
+
+// console.log(reverseString(str));
+
+
+
+
+// 2. Check if a string is a palindrome
+// Result: "madam" → true, "hello" → false
+
+// function real(str) {
+//   let reversed = str.split('').reverse().join('');
+
+//   return str === reversed;
+// }
+
+// console.log(real("hello")); 
+ 
+
+
+// 3. Count vowels in a string
+// Result: "education" → 5
+
+function countVowels(str) {
+  let count = 0;
+  let vowels = "aeiouy";
+
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(countVowels("education")); 
+console.log(countVowels("hello")); 
+console.log(countVowels("sky")); 
+console.log(countVowels("everything"))
+
+
+
+
+
+
+
+// 4. Find the longest word in a sentence
+
+// Result: "I love programming" → "programming"
+
+
+
+// 5. Count character occurrences
+
+// Result: "hello" → { h:1, e:1, l:2, o:1 }
