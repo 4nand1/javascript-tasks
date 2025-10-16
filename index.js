@@ -333,23 +333,23 @@
 // 3. Count vowels in a string
 // Result: "education" → 5
 
-function countVowels(str) {
-  let count = 0;
-  let vowels = "aeiouy";
+// function countVowels(str) {
+//   let count = 0;
+//   let vowels = "aeiouy";
 
-  for (let i = 0; i < str.length; i++) {
-    if (vowels.includes(str[i])) {
-      count++;
-    }
-  }
+//   for (let i = 0; i < str.length; i++) {
+//     if (vowels.includes(str[i])) {
+//       count++;
+//     }
+//   }
 
-  return count;
-}
+//   return count;
+// }
 
-console.log(countVowels("education")); 
-console.log(countVowels("hello")); 
-console.log(countVowels("sky")); 
-console.log(countVowels("everything"))
+// console.log(countVowels("education")); 
+// console.log(countVowels("hello")); 
+// console.log(countVowels("sky")); 
+// console.log(countVowels("everything"))
 
 
 
@@ -366,3 +366,24 @@ console.log(countVowels("everything"))
 // 5. Count character occurrences
 
 // Result: "hello" → { h:1, e:1, l:2, o:1 }
+
+
+
+
+
+
+// const birthday = new Date("2007-07-31");
+// const today = new Date();
+
+// let years = today.getFullYear() - birthday.getFullYear();
+// let months = today.getMonth() - birthday.getMonth();
+
+// if (months < 0) {
+//   years--;
+//   months += 12;
+// }
+
+
+// console.log(`${years} ${months}`);
+
+

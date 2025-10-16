@@ -3,19 +3,38 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: aliceblue;
 }
 
-.container {
-  width: 400px;
-  height: 400px;
+.counter {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: red;
-  display: flex;
+  gap: 40px;
+  background-color: white;
+  padding: 30px 50px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
+  background-color:darkred;
 }
-.box {
-  display: flex;
-  width: 100px;
-  height: 100px;
-  background-color: aqua;
+
+.button {
+  font-size: 30px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 6px;
+  transition: background 0.1s;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
+
+.span {
+  font-size: 28px;
+  width: 40px;
+  text-align: center;
 }
