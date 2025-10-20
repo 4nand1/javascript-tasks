@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: #f1f5f9;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.todo-box {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 16px;
+  font-size: 28px;
+}
+
+.input-section {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.input-section button {
+  padding: 10px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.input-section button:hover {
+  background: #2563eb;
+}
+
+.filters {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background: #e5e7eb;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filter-btn.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.task-list {
+  min-height: 80px;
+}
+
+.no-task {
+  color: #6b7280;
+}
+
+.footer-text {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-top: 1rem;
+}
+
+.footer a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

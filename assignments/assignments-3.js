@@ -205,19 +205,42 @@
 
 // 9. Diagonal Sum of Matrix
 // Problem: Calculate sum of main diagonal in a square matrix
-const matrix = [
-  [1, 2, 3, 4, 4],
-  [4, 5, 6, 5, 6],
-  [7, 8, 9, 7, 7],
-  [5, 6, 7, 5, 9],
-  [6, 7, 6, 4, 7]
-];
+// const matrix = [
+//   [1, 2, 3, 4, 4],
+//   [4, 5, 6, 5, 6],
+//   [7, 8, 9, 7, 7],
+//   [5, 6, 7, 5, 9],
+//   [6, 7, 6, 4, 7]
+// ];
 
-let sum = 0;
+// let sum = 0;
 
 
-for (let i = 0; i < matrix.length; i++) {
-  sum += matrix[i][i]; 
+// for (let i = 0; i < matrix.length; i++) {
+//   sum += matrix[i][i]; 
+// }
+
+// console.log(sum);
+
+
+//Өгөгдсөн өдрийг шалгаж, зөвхөн амралтын өдөр эсвэл ажлын өдөр болохыг хэвлэнэ үү.
+
+function odorvvd(day) {
+  switch (day) {
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+      console.log("weekdays");
+      break;
+    case "6":
+    case "7":
+      console.log("weekends");
+      break;
+    default:
+      console.log("invalid");
+  }
 }
-
-console.log(sum);
+odorvvd("8");
+ 
