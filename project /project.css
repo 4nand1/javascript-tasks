@@ -308,3 +308,9 @@ body {
 button {
   margin-left: 5px;
 }
+
+.item.done p {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.7;
+}
