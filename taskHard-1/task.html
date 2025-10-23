@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reaction Time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="task.css" />
+  </head>
+  <body>
+    <div class="hud">
+      <div class="row">
+        <button id="start">Start</button>
+        <button id="reset" class="ghost">Reset</button>
+      </div>
+      <div class="row">
+        <span id="msg">Press Start, wait, then click when GREEN.</span>
+        <span class="dot">•</span>
+        <span>Last: <b id="last">-</b> ms</span>
+      </div>
+    </div>
+
+    <div id="stage" class="stage idle" tabindex="0">Press Start</div>
+
+    <script src="task.js"></script>
+  </body>
+</html>

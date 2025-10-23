@@ -43,7 +43,7 @@ startBtn.addEventListener("click", () => {
   timer = setInterval(() => {
     sec++;
     updateDisplay();
-  }, 1000);
+  }, 900);
 });
 
 stopBtn.addEventListener("click", () => {
