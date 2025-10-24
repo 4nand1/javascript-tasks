@@ -5,85 +5,87 @@ html,
 body {
   height: 100%;
   margin: 0;
-  font-family: Arial, system-ui;
-  background: #000;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+#app {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background: #0b0b0b;
+  color: #fff;
 }
 
 .stage {
-  position: fixed;
-  inset: 0;
   display: grid;
   place-items: center;
-  user-select: none;
+  text-align: center;
   font-weight: 800;
-  font-size: clamp(28px, 6vw, 72px);
-  color: #fff;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  font-size: clamp(28px, 7vw, 96px);
+  user-select: none;
+  outline: none;
+  transition: background-color 120ms ease, color 120ms ease;
 }
+
+/* States */
 .stage.idle {
   background: #222;
-  color: #eaeaea;
+  color: #ddd;
 }
-.stage.wait {
-  background: #c0392b;
-}
+.stage.waiting {
+  background: #b00020;
+} /* red */
 .stage.ready {
-  background: #2ecc71;
-  color: #052b16;
-} 
+  background: #2e7d32;
+} /* green */
 
-
-.hud {
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 14px;
-  left: 14px;
-  right: 14px;
+/* bottom panel */
+.panel {
+  padding: 16px clamp(16px, 5vw, 40px);
+  background: #111;
+  border-top: 1px solid #2a2a2a;
   display: grid;
-  gap: 8px;
-  z-index: 2;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  font-size: 14px;
+  gap: 12px;
 }
-.row {
+
+.msg {
+  opacity: 0.9;
+  font-size: 15px;
+}
+
+.stats {
+  font-size: 18px;
   display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.dot {
-  opacity: 0.6;
+  align-items: baseline;
+  gap: 8px;
 }
 
-button {
-  padding: 8px 12px;
-  border: 0;
-  border-radius: 10px;
-  background: #4f8cff;
-  color: #fff;
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
   cursor: pointer;
-}
-button.ghost {
-  background: #2a2a2a;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid #3a3a3a;
+  background: #1b1b1b;
   color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn.primary {
+  background: #335dff;
+  border-color: #2a4de0;
 }
 
-#start {
-  font-size: 20px;
-  padding: 14px 24px;
-  background: #4f8cff;
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-}
-
-#start:hover {
-  background: #3a6dd8;
-  transform: scale(1.05);
-  transition: 0.2s;
+.stage:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid #76a8ff;
+  outline-offset: 2px;
 }

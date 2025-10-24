@@ -1,59 +1,101 @@
-// const hour = document.querySelector("#Hour");
-// const minute = document.querySelector("#Minute");
-// const second = document.querySelector("#Second");
-// const start = document.querySelector(".startbtn");
-// const stopbtn = document.querySelector(".st");
+// const hour = document.getElementById("Hour");
+// const minute = document.getElementById("Minute");
+// const second = document.getElementById("Second");
+
+// const startBtn = document.querySelector(".startbtn");
+// const stopBtn = document.querySelector(".stopbtn");
+// const resetBtn = document.querySelector(".resetbtn");
 
 // let sec = 0;
+// let timer = null;
 
-// startbtn.addEventListener("click", () => {
-//   const timer = setInterval(() => {
+// function updateDisplay() {
+//   const hrs = Math.floor(sec / 3600);
+//   const mins = Math.floor((sec % 3600) / 60);
+//   const secs = sec % 60;
+
+//   hour.textContent = hrs.toString().padStart(2, "0");
+//   minute.textContent = mins.toString().padStart(2, "0");
+//   second.textContent = secs.toString().padStart(2, "0");
+// }
+
+// startBtn.addEventListener("click", () => {
+//   if (timer) return;
+
+//   timer = setInterval(() => {
 //     sec++;
-
-//     second.textContent = sec % 60;
-//     minute.textContent = Math.floor(sec / 60);
-//     hour.textContent = sec;
-//   }, 100);
+//     updateDisplay();
+//   }, 900);
 // });
 
-const hour = document.getElementById("Hour");
-const minute = document.getElementById("Minute");
-const second = document.getElementById("Second");
+// stopBtn.addEventListener("click", () => {
+//   clearInterval(timer);
+//   timer = null;
+// });
+
+// resetBtn.addEventListener("click", () => {
+//   clearInterval(timer);
+//   timer = null;
+//   sec = 0;
+//   updateDisplay();
+// });
+
+// ====== ELEMENTS ======
+const hourEl = document.getElementById("Hour");
+const minEl = document.getElementById("Minute");
+const secEl = document.getElementById("Second");
 
 const startBtn = document.querySelector(".startbtn");
 const stopBtn = document.querySelector(".stopbtn");
 const resetBtn = document.querySelector(".resetbtn");
 
-let sec = 0;
-let timer = null;
+// ====== STATE ======
+let isRunning = false;
+let intervalId = null;
+let startMs = 0; // Старт дарсан мөчийн timestamp
+let carryMs = 0; // Түр зогсоосон хүртэлх хуримтлагдсан хугацаа (ms)
 
-function updateDisplay() {
-  const hrs = Math.floor(sec / 3600);
-  const mins = Math.floor((sec % 3600) / 60);
-  const secs = sec % 60;
+// Туслах функцууд
+const pad2 = (n) => String(n).padStart(2, "0");
 
-  hour.textContent = hrs.toString().padStart(2, "0");
-  minute.textContent = mins.toString().padStart(2, "0");
-  second.textContent = secs.toString().padStart(2, "0");
+function render(ms) {
+  const totalSec = Math.floor(ms / 1000);
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+
+  hourEl.textContent = pad2(h);
+  minEl.textContent = pad2(m);
+  secEl.textContent = pad2(s);
 }
 
-startBtn.addEventListener("click", () => {
-  if (timer) return;
+function tick() {
+  const elapsed = Date.now() - startMs + carryMs; // яг хугацааг тооцно
+  render(elapsed);
+}
 
-  timer = setInterval(() => {
-    sec++;
-    updateDisplay();
-  }, 900);
+// ====== BUTTON HANDLERS ======
+startBtn.addEventListener("click", () => {
+  if (isRunning) return; // давхар асаахаас сэргийлэх
+  isRunning = true;
+  startMs = Date.now();
+  intervalId = setInterval(tick, 200); // жаахан давтамжтайгаар тооцоолж, хэлтрэлийг багасгана
 });
 
 stopBtn.addEventListener("click", () => {
-  clearInterval(timer);
-  timer = null;
+  if (!isRunning) return;
+  isRunning = false;
+  clearInterval(intervalId);
+  carryMs += Date.now() - startMs; // явсан хугацааг хадгална
 });
 
 resetBtn.addEventListener("click", () => {
-  clearInterval(timer);
-  timer = null;
-  sec = 0;
-  updateDisplay();
+  isRunning = false;
+  clearInterval(intervalId);
+  startMs = 0;
+  carryMs = 0;
+  render(0); // 00:00:00 болгоно
 });
+
+// Анхны төлөв
+render(0);

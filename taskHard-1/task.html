@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <title>Reaction Time</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="task.css" />
   </head>
   <body>
-    <div class="hud">
-      <div class="row">
-        <button id="start">Start</button>
-        <button id="reset" class="ghost">Reset</button>
+    <main id="app">
+      <div id="stage" class="stage idle" tabindex="0" aria-live="polite">
+        Press Start
       </div>
-      <div class="row">
-        <span id="msg">Press Start, wait, then click when GREEN.</span>
-        <span class="dot">•</span>
-        <span>Last: <b id="last">-</b> ms</span>
-      </div>
-    </div>
 
-    <div id="stage" class="stage idle" tabindex="0">Press Start</div>
+      <div class="panel">
+        <div class="msg" id="msg">
+          Press Start, wait, then click when GREEN.
+        </div>
+        <div class="stats">
+          <span>Last:</span>
+          <strong id="last">-</strong><span> ms</span>
+        </div>
+        <div class="actions">
+          <button id="start" class="btn primary">Start</button>
+          <button id="reset" class="btn">Reset</button>
+        </div>
+      </div>
+    </main>
 
     <script src="task.js"></script>
   </body>
